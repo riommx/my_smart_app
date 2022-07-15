@@ -8,7 +8,10 @@ import 'app/app_widget.dart';
   runApp(const MyApp());
 } */
 void main() {
-  return runApp(ModularApp(module: AppModule(), child: AppWidget()));
+  return runApp(ModularApp(
+    module: AppModule(),
+    child: const AppWidget(),
+  ));
 }
 
 /* class AppModule extends Module {
