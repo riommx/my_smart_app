@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-class AuthPage extends StatelessWidget {
-  const AuthPage({super.key});
+import '../../../model/library.dart';
 
+class AuthPage extends StatelessWidget {
+  const AuthPage(this.sid, {super.key});
+  final Person sid;
+
+  /* Person.fromMap(map: {
+    'name': 'Sid',
+    'birthDate': '09/05/1974',
+    'uid': '',
+  }); */ //(name: NameVO('Sid'), birthDate: DateVO('09/05/1974'), uid: '');
   @override
   Widget build(BuildContext context) {
+    //final sid = Person(name: NameVO('Sid'), birthDate: DateVO('09/05/1974'));
     return Scaffold(
-      appBar: AppBar(title: const Text('Auth Page')),
+      appBar: AppBar(title: const Text('AAAAA Page')),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Editor(
                 controller: TextEditingController(),
-                rotulo: "Nome",
-                dica: "Fulano",
+                rotulo: sid.name.getOrElse('errooooo'),
+                dica: "Nome", //sid.name.getOrCrash, //"Fulano",
                 validate: false,
                 icon: Icons.person),
             Editor(
