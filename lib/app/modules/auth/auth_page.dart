@@ -40,7 +40,7 @@ class AuthPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: Center(
                   child: ElevatedButton(
-                    onPressed: () => Modular.to.navigate('/auth'),
+                    onPressed: () => Modular.to.navigate('/'),
                     child: const Text('Navigate to Auth Page'),
                   ),
                 ),

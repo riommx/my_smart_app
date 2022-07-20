@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:my_smart_app/model/library.dart';
 
 import 'app/app_module.dart';
 import 'app/app_widget.dart';
-import 'model/library.dart';
+//import 'model/library.dart';
 
 /* void main() {
   runApp(const MyApp());

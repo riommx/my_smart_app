@@ -11,8 +11,8 @@ class HomePage extends StatelessWidget {
       //body: const TestForm(),
       body: Center(
         child: ElevatedButton(
-          onPressed: () => Modular.to.navigate('/auth'),
-          child: const Text('Navigate to Auth Page'),
+          onPressed: () => Modular.to.navigate('/board'),
+          child: const Text('Navigate to board Page'),
         ),
       ),
     );
