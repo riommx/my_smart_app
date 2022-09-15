@@ -1,4 +1,5 @@
-import '../library.dart';
+import '../value_object/library.dart';
+import 'v_o_group.dart';
 
 class AddressVOG extends VOGroup {
   final NameVO name;

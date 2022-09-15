@@ -1,37 +1,21 @@
 import 'package:dartz/dartz.dart';
-
-import '../validation/string_validation.dart';
-
+//
+import 'string_validation.dart';
 import '../failures/failures.dart';
 
-/* 
-enum StringValidationEnum {
-  userName,
-
-  email,
-
-  password,
-
-  name,
-
-  word,
-
-  text,
-}
-
-enum NumValidationEnum {
-  numPositivo,
-
-  numNegativo,
-}
-*/
-
+// #############################################################################
+// #  Ver: 2.0 - last: 15/09/22
+// #  Nullsafety
+// #  TODO: Comment Class
+// #############################################################################
 class Validation {
+  //============================================================================
   static Either<Failures, String> date(String value) {
     final validation = StringValidation()..dateTime();
     return validation.validate(value);
   }
 
+  //============================================================================
   static Either<Failures, String> name(String value) {
     final validation = StringValidation()
       ..notEmpty()
@@ -50,6 +34,7 @@ class Validation {
     return validation.validate(value);
   }
 
+  //============================================================================
   static Either<Failures, String> nameSid(String value) {
     final validation = StringValidation()
       ..maxLength(max: 4)
@@ -64,6 +49,7 @@ class Validation {
     return validation.validate(value);
   }
 
+  //============================================================================
   static Either<Failures, String> futureDate(String value) {
     final validation = StringValidation()..dateTime();
     if (validation.validate(value).isRight()) {
@@ -76,6 +62,7 @@ class Validation {
     return validation.validate(value);
   }
 
+  //============================================================================
   static Either<Failures, String> pastDate(String value) {
     final validation = StringValidation()..dateTime();
     if (validation.validate(value).isRight()) {
@@ -88,3 +75,19 @@ class Validation {
     return validation.validate(value);
   }
 }
+// ******************************************************************
+// *    _____   _   _____      _______   ______    _____   _    _
+// *   / ____| | | |  __ \    |__   __| |  ____|  / ____| | |  | |
+// *  | (___   | | | |  | |      | |    | |__    | |      | |__| |
+// *   \___ \  | | | |  | |      | |    |  __|   | |      |  __  |
+// *   ____) | |_| | |__| |      | |    | |____  | |____  | |  | |
+// *  |_____/  (_) |_____/       |_|    |______|  \_____| |_|  |_|
+// *
+// *  ┈┈┈╭━━╮┈┈┈┈┈┈
+// *  ┈┈╭╯┊◣╰━━━━╮┈┈
+// *  ┈┈┃┊┊┊╱▽▽▽┛┈┈  -< Designed by Sedinir Consentini @ MMXXII >-
+// *  ┈┈┃┊┊┊~~~   ┈┈┈┈        -< Rio de Janeiro - Brazil >-
+// *  ━━╯┊┊┊╲△△△┓┈┈
+// *  ┊┊┊┊╭━━━━━━╯┈┈   --->  May the source be with you!  <---
+// *
+// ******************************************************************
