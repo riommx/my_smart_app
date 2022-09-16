@@ -1,5 +1,3 @@
-import 'package:dartz/dartz.dart';
-import 'package:uuid/uuid.dart';
 //
 import 'value_object.dart';
 import '../validation/library.dart';
@@ -13,27 +11,25 @@ import '../validation/library.dart';
 //==============================================================================
 class UniqueIdVO extends ValueObject<String> {
   //
-  UniqueIdVO({
-    String uniqueId = '',
-  }) : super(uniqueId.isEmpty ? right(const Uuid().v1()) : right(uniqueId));
+  UniqueIdVO(String value) : super(Validation.uId.fun(value));
 }
 
 //==============================================================================
 class DateVO extends ValueObject<String> {
   //
-  DateVO(String value) : super(Validation.date(value));
+  DateVO(String value) : super(Validation.date.fun(value));
 }
 
 //==============================================================================
 class NameVO extends ValueObject<String> {
   //
-  NameVO(String value) : super(Validation.name(value));
+  NameVO(String value) : super(Validation.name.fun(value));
 }
 
 //==============================================================================
 class NameSidVO extends ValueObject<String> {
   //
-  NameSidVO(String value) : super(Validation.nameSid(value));
+  NameSidVO(String value) : super(Validation.name.fun(value));
 }
 // ******************************************************************
 // *    _____   _   _____      _______   ______    _____   _    _

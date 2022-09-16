@@ -8,7 +8,7 @@ abstract class Entity with Helper {
     required String uid,
     required Map<String, dynamic> properties,
   }) {
-    this.uid = UniqueIdVO(uniqueId: uid);
+    this.uid = UniqueIdVO(uid);
     this.properties.putIfAbsent(
           'uid',
           () => this.uid,

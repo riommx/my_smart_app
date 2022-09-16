@@ -2,7 +2,20 @@ import 'package:dartz/dartz.dart';
 //
 import '../failures/failures.dart';
 import 'num_validator.dart';
-import 'validations_enum.dart';
+
+enum NumValidationsEnum {
+  positive,
+
+  negative,
+
+  maxValue,
+
+  minValue,
+
+  regex,
+
+  otherValitadion,
+}
 
 class NumValidation {
   ///

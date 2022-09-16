@@ -1,4 +1,5 @@
-import '../validation/validations_enum.dart';
+import '../validation/num_validation.dart';
+import '../validation/string_validation.dart';
 import 'value_failure.dart';
 
 // #############################################################################
@@ -81,7 +82,7 @@ class Failures {
       //
       case StringValidationsEnum.notEmpty:
         _list.add(
-          ValueFailure.empty(),
+          const ValueFailure.empty(),
         );
         break;
       //
