@@ -1,11 +1,11 @@
 import 'v_o_group.dart';
 import '../value_object/value_object_classes.dart';
 
-class AddressVOG extends VOGroup {
+class NameDateVOG extends VOGroup {
   final NameVO name;
   final DateVO birthDate;
 
-  AddressVOG._(
+  NameDateVOG._(
     this.name,
     this.birthDate,
   ) : super(
@@ -16,23 +16,23 @@ class AddressVOG extends VOGroup {
         );
 
   ///
-  factory AddressVOG({
+  factory NameDateVOG({
     required NameVO name,
     required DateVO birthDate,
   }) {
-    return AddressVOG._(
+    return NameDateVOG._(
       name,
       birthDate,
     );
   }
 
   ///
-  factory AddressVOG.fromMap({
+  factory NameDateVOG.fromMap({
     required Map<String, dynamic> map,
   }) {
     VOGroup.mapValidate(map, ['name', 'birthDate']);
 
-    return AddressVOG._(
+    return NameDateVOG._(
       NameVO(map['name']),
       DateVO(map['birthDate']),
     );

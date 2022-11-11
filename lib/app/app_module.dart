@@ -6,8 +6,8 @@ import 'modules/pages.dart';
 
 class AppModule extends Module {
   //
-  @override
-  List<Bind> get binds => [];
+/*   @override
+  List<Bind> get binds => []; */
   //
   @override
   List<ModularRoute> get routes => [

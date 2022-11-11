@@ -1,48 +1,12 @@
-import 'i_num_validator.dart';
-import 'i_validator.dart';
+import 'i_value_failure.dart';
 
 // #############################################################################
-// #  Ver: 1.0 - last: 12/01/22
+// #  Ver: 2.0 - last: 21/09/22
 // #  Nullsafety
-// #  Validator of nums
+// #  TODO: Interface for Validation
 // #############################################################################
-class NumValidator implements IValidator<num>, INumValidator {
-  //
-  NumValidator();
-
-  @override
-  bool positive({required num value}) => !(value.isNegative);
-
-  @override
-  bool negative({required num value}) => value.isNegative;
-
-  @override
-  bool maxValue({
-    required num value,
-    required num max,
-  }) =>
-      value <= max;
-
-  @override
-  bool minValue({
-    required num value,
-    required num min,
-  }) =>
-      value >= min;
-
-  @override
-  bool regex({
-    required num value,
-    required RegExp reg,
-  }) =>
-      reg.hasMatch(value.toString());
-
-  @override
-  bool otherValidation({
-    required num value,
-    required bool Function(num value) fun,
-  }) =>
-      fun(value);
+abstract class IValidation<T> {
+  List<IValueFailure> failures(T value);
 }
 // ******************************************************************
 // *    _____   _   _____      _______   ______    _____   _    _
@@ -58,5 +22,5 @@ class NumValidator implements IValidator<num>, INumValidator {
 // *  ┈┈┃┊┊┊~~~   ┈┈┈┈        -< Rio de Janeiro - Brazil >-
 // *  ━━╯┊┊┊╲△△△┓┈┈
 // *  ┊┊┊┊╭━━━━━━╯┈┈   --->  May the source be with you!  <---
-// *  
+// *
 // ******************************************************************

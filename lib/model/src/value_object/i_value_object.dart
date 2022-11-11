@@ -1,21 +1,21 @@
 import 'package:meta/meta.dart';
 import 'package:dartz/dartz.dart';
 //
-import '../failures/failures.dart';
+import '../validation/i_value_failure.dart';
 
 // #############################################################################
-// #  Ver: 2.0 - last: 15/09/22
+// #  Ver: 2.0 - last: 21/09/22
 // #  Nullsafety
 // #  Interface Class for Validated Value Objects
 // #############################################################################
 @immutable
 abstract class IValueObject<T> {
   // ===========================================================================
-  /// Throws [UnexpectedValueError] containing the [ValueFailures]
+  /// Throws [UnexpectedValueError] containing the [IValueFailure]
   T get getOrCrash;
 
   // ===========================================================================
-  Either<Failures, Unit> get failuresOrUnit;
+  Either<List<IValueFailure>, Unit> get failuresOrUnit;
 
   // ===========================================================================
   T getOrElse(T defaultValue);

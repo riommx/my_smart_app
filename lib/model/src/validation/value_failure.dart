@@ -1,25 +1,55 @@
+import 'package:equatable/equatable.dart';
+
+import 'i_value_failure.dart';
+
 // #############################################################################
-// #  Ver: 1.0 - last: 12/01/22
+// #  Ver: 2.0 - last: 20/09/22
 // #  Nullsafety
-// #  Interface to validate a String
+// #  Value Failure Base Class
 // #############################################################################
-abstract class IStringValidator {
+abstract class ValueFailure extends Equatable implements IValueFailure {
   //
-  bool notEmpty({required String value});
+  final dynamic failValue;
   //
-  bool singleLine({required String value});
+  final Map<String, String> failParams;
   //
-  bool dateTime({required String value});
-  //
-  bool minLength({
-    required String value,
-    required int min,
+  const ValueFailure({
+    required this.failValue,
+    required this.failParams,
   });
   //
-  bool maxLength({
-    required String value,
-    required int max,
-  });
+  @override
+  Type get type => failValue.runtimeType;
+  //
+  @override
+  String get value => failValue.toString();
+  //
+  @override
+  Map<String, String> get params => failParams;
+  //
+  @override
+  String get message;
+  //
+/*   @override
+  String toString() {
+    // TODO: implement toString
+    var str = '';
+    str += '$runtimeType: $message - value: $value - type: $type - $params';
+    return str;
+  } */
+
+  // ===========================================================================
+  // FOR Equatable
+  @override
+  bool get stringify => true;
+
+  // ===========================================================================
+  // FOR Equatable
+  @override
+  List<Object> get props => [
+        failValue,
+        failParams,
+      ];
 }
 // ******************************************************************
 // *    _____   _   _____      _______   ______    _____   _    _
@@ -35,5 +65,5 @@ abstract class IStringValidator {
 // *  ┈┈┃┊┊┊~~~   ┈┈┈┈        -< Rio de Janeiro - Brazil >-
 // *  ━━╯┊┊┊╲△△△┓┈┈
 // *  ┊┊┊┊╭━━━━━━╯┈┈   --->  May the source be with you!  <---
-// *  
+// *
 // ******************************************************************

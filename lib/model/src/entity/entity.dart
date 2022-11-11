@@ -1,5 +1,4 @@
-import '../value_object/library.dart';
-
+import '../value_object/value_object_classes.dart';
 import 'helper_mixin.dart';
 
 abstract class Entity with Helper {
@@ -8,7 +7,7 @@ abstract class Entity with Helper {
     required String uid,
     required Map<String, dynamic> properties,
   }) {
-    this.uid = UniqueIdVO(uid);
+    this.uid = UniqueIdVO(uniqueId: uid);
     this.properties.putIfAbsent(
           'uid',
           () => this.uid,

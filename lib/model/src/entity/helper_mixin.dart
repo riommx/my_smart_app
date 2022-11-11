@@ -1,7 +1,7 @@
+import '../validation/i_valid.dart';
 import 'i_d_t_o.dart';
-import '../validation/i_validatable.dart';
 
-mixin Helper implements IValidatable, IDTO {
+mixin Helper implements IValid, IDTO {
   final Map<String, dynamic> properties = {};
 
   List<Object> get propsList {
@@ -29,7 +29,7 @@ mixin Helper implements IValidatable, IDTO {
   }
 
   @override
-  bool isValid() {
+  bool get valid {
     var valid = true;
     properties.forEach(
       (

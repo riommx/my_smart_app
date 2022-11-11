@@ -1,9 +1,23 @@
+import 'i_value_failure.dart';
+
 // #############################################################################
-// #  Ver: 1.0 - last: 12/01/22
-// #  Interface for know if a VVO is Right
+// #  Ver: 2.0 - last: 21/09/22
+// #  Nullsafety
+// #  Exeption for Value
 // #############################################################################
-abstract class IValidatable {
-  bool isValid();
+class ValueError extends Error {
+  final List<IValueFailure> failures;
+  //
+  ValueError(this.failures);
+  //
+  @override
+  String toString() {
+    const explanation =
+        'Encountered an unexpected ValueFailure at an unrecoverable point.';
+
+    return Error.safeToString(
+        '$explanation - Terminating. Failures were: ${failures.toString()}');
+  }
 }
 // ******************************************************************
 // *    _____   _   _____      _______   ______    _____   _    _

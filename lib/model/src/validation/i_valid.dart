@@ -1,23 +1,10 @@
 // #############################################################################
-// #  Ver: 1.0 - last: 12/01/22
+// #  Ver: 2.0 - last: 17/09/22
 // #  Nullsafety
-// #  Interface to validate a Num
+// #  Interface for know if a VO is Right
 // #############################################################################
-abstract class INumValidator {
-  //
-  bool positive({required num value});
-  //
-  bool negative({required num value});
-  //
-  bool minValue({
-    required num value,
-    required num min,
-  });
-  //
-  bool maxValue({
-    required num value,
-    required num max,
-  });
+abstract class IValid {
+  bool get valid;
 }
 // ******************************************************************
 // *    _____   _   _____      _______   ______    _____   _    _

@@ -1,6 +1,6 @@
 import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
-import '../entity/helper_mixin.dart';
+import 'helper_mixin.dart';
 
 //
 @immutable

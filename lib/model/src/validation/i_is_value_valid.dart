@@ -1,22 +1,11 @@
-import 'validations.dart';
-
 // #############################################################################
-// #  Ver: 2.0 - last: 15/09/22
+// #  Ver: 2.0 - last: 19/09/22
 // #  Nullsafety
-// #  TODO: Comment Class
+// #  Interface to validate T
 // #############################################################################
-
-enum Validation {
-  uId(fun: Validations.uId),
-  date(fun: Validations.date),
-  name(fun: Validations.name),
-  nameSid(fun: Validations.nameSid),
-  pastDate(fun: Validations.pastDate),
-  futureDate(fun: Validations.futureDate);
-
-  final Function fun;
-
-  const Validation({required this.fun});
+abstract class IIsValueValid<T> {
+  //
+  bool isValid(T value);
 }
 // ******************************************************************
 // *    _____   _   _____      _______   ______    _____   _    _
@@ -32,5 +21,5 @@ enum Validation {
 // *  ┈┈┃┊┊┊~~~   ┈┈┈┈        -< Rio de Janeiro - Brazil >-
 // *  ━━╯┊┊┊╲△△△┓┈┈
 // *  ┊┊┊┊╭━━━━━━╯┈┈   --->  May the source be with you!  <---
-// *
+// *  
 // ******************************************************************
